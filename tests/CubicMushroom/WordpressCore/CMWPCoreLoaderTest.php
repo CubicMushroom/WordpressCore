@@ -5,6 +5,7 @@
 
 namespace CubicMushroom\WordpressCore;
 
+require_once('Resources/DummyEmptyPlugin.php');
 require_once('Resources/DummyPlugin.php');
 
 /**
@@ -18,11 +19,22 @@ class CMWPCoreLoaderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test if not OK when passing an object extended from the PluginInfo class with missing properties
+     * @expectedException        CubicMushroom\WordpressCore\Exception\MissingPropertyException
+     */
+    public function testRegisterInvalidObjectPlugin()
+    {
+        $dummyPlugin = new \DummyEmptyPlugin();
+        CMWPCoreLoader::registerPlugin($dummyPlugin);
+    }
+
+    /**
      * Test if OK when passing an object extended from the PluginInfo class
      */
-    public function testRegisterValidPlugin()
+    public function testRegisterValidObjectPlugin()
     {
         $dummyPlugin = new \DummyPlugin();
+        $dummyPlugin->name = 'Dummy Plugin';
         CMWPCoreLoader::registerPlugin($dummyPlugin);
         $this->assertAttributeContains($dummyPlugin, 'plugins', 'CubicMushroom\WordpressCore\CMWPCoreLoader');
     }

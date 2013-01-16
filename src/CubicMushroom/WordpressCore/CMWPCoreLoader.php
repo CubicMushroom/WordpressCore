@@ -18,9 +18,15 @@ class CMWPCoreLoader
      */
     static $plugins = array();
 
-    //
+    /**
+     * Register a plugin with the loader
+     *
+     * @uses PluginInfo::check()
+     */
     public static function registerPlugin(PluginInfo $plugin)
     {
+        // Check whether the plugin requirements have been met
+        $plugin->checkRequired();
         self::$plugins[] = $plugin;
     }
 }
