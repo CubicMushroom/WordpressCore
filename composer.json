@@ -1,0 +1,14 @@
+{
+    "name": "cubicmushroom/wordpress-core",
+    "description": "Library to help with common WordPress theme & plugin tasks",
+    "authors": [
+        {
+            "name": "Toby Griffiths",
+            "email": "toby@cubicmushroom.co.uk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+
+    }
+}
