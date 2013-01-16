@@ -5,21 +5,21 @@
 
 namespace CubicMushroom\WordpressCore;
 
-uses CubicMushroom\WordpressCore\Exceptions\MissingDetailsException;
-uses CubicMushroom\WordpressCore\Plugin\PluginInfo;
+use CubicMushroom\WordpressCore\Exceptions\MissingDetailsException;
+use CubicMushroom\WordpressCore\Plugin\PluginInfo;
 
 /**
  * 
  */
-class CMWPCoreLoader()
+class CMWPCoreLoader
 {
     /**
      * @var array Stores each registered plugin
      */
-    protected static $plugins = array();
+    static $plugins = array();
 
     //
-    protected static function registerPlugin(PluginInfo $plugin)
+    public static function registerPlugin(PluginInfo $plugin)
     {
         self::$plugins[] = $plugin;
     }
