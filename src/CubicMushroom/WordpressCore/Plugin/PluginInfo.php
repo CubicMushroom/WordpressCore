@@ -18,6 +18,11 @@ abstract class PluginInfo
     protected $name;
 
     /**
+     * @var string Identifier of the plugin
+     */
+    protected $id;
+
+    /**
      * @var string Description of the plugin
      */
     protected $description;
