@@ -1,8 +1,8 @@
 <?php
 
-use CubicMushroom\WordpressCore\Plugin\PluginInfo;
+use CubicMushroom\WordpressCore\Component\Plugin\Plugin;
 
-class DummyPlugin extends PluginInfo
+class DummyPlugin extends Plugin
 {
     public $name        = 'Dummy Plugin';
     public $id          = 'dummy-plugin';

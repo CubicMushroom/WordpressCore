@@ -19,7 +19,7 @@ class CMWPCoreLoaderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test if not OK when passing an object extended from the PluginInfo class with missing properties
+     * Test if not OK when passing an object extended from the Plugin class with missing properties
      * @expectedException        CubicMushroom\WordpressCore\Exception\MissingPropertyException
      */
     public function testRegisterInvalidObjectPlugin()
@@ -29,7 +29,7 @@ class CMWPCoreLoaderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test if OK when passing an object extended from the PluginInfo class
+     * Test if OK when passing an object extended from the Plugin class
      */
     public function testRegisterValidObjectPlugin()
     {
@@ -44,7 +44,7 @@ class CMWPCoreLoaderTest extends \PHPUnit_Framework_TestCase
      *
      * @expectedException        PHPUnit_Framework_Error
      * @expectedExceptionMessage Argument 1 passed to CubicMushroom\WordpressCore\CMWPCoreLoader::registerPlugin()
-     *                           must be an instance of CubicMushroom\WordpressCore\Plugin\PluginInfo
+     *                           must be an instance of CubicMushroom\WordpressCore\Component\Plugin\Plugin
      */
     public function testRegisterInvalidArrayPlugin()
     {

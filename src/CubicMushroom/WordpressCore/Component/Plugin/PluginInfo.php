@@ -3,7 +3,7 @@
  * Abstract Plugin class extended by each plugin with it's own settings
  */
 
-namespace CubicMushroom\WordpressCore\Plugin;
+namespace CubicMushroom\WordpressCore\Component\Plugin;
 
 use CubicMushroom\WordpressCore\Exception\MissingPropertyException;
 
@@ -36,21 +36,6 @@ abstract class PluginInfo
      * @var string Version number of the bundled core files
      */
     protected $bundledCore;
-
-    /**
-     * Method used to check all required properties are defined in child classes
-     */
-    public function checkRequired()
-    {
-        $requiredProperties = array('name', 'id', 'version', 'bundledCore');
-        foreach ($requiredProperties as $requiredProperty) {
-            if (empty($this->{$requiredProperty})) {
-                throw new MissingPropertyException(
-                    "$requiredProperty property is not defined"
-                );
-            }
-        }
-    }
 
 
     /******************
